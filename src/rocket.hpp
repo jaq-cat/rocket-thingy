@@ -12,17 +12,23 @@ class Rocket : public sf::Drawable, public sf::Transformable {
 private:
     sf::ConvexShape nose;
     sf::RectangleShape fuselage;
+    sf::ConvexShape engineTop;
+    sf::ConvexShape engineBottom;
 
 public:
     Rocket()
     : nose(sf::ConvexShape(3)),
     fuselage(sf::RectangleShape(sf::Vector2f(SHIP_WIDTH, SHIP_HEIGHT))) {
+        // nose
         nose.setPoint(0, sf::Vector2f(SHIP_WIDTH/2.0, 0));
         nose.setPoint(1, sf::Vector2f(0.0, SHIP_WIDTH));
         nose.setPoint(2, sf::Vector2f(SHIP_WIDTH, SHIP_WIDTH));
-        fuselage.move(sf::Vector2f(0, SHIP_WIDTH));
         nose.setFillColor(SPACE_ORANGE);
+        // fuselage
+        fuselage.move(sf::Vector2f(0, SHIP_WIDTH));
         fuselage.setFillColor(sf::Color(0, 0, 0));
+        // engine to
+        // engine bottom
     }
     ~Rocket() {}
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
