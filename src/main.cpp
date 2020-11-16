@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <unordered_map>
+#include <cstdlib>
 
 using sf::Vector2u;
 using sf::Vector2i;
@@ -62,5 +63,5 @@ int main() {
         win.clear(Color(147, 208, 249));
         win.display();
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
