@@ -42,7 +42,7 @@ public:
         eBottom.setPoint(1, sf::Vector2f(0.0, SHIP_WIDTH));
         eBottom.setPoint(2, sf::Vector2f(SHIP_WIDTH, SHIP_WIDTH));
         eBottom.setFillColor(sf::Color(0, 0, 0));
-        eBottom.move(sf::Vector2f(0, SHIP_WIDTH+SHIP_HEIGHT));
+        eBottom.move(sf::Vector2f(0, SHIP_WIDTH+SHIP_HEIGHT+SHIP_WIDTH/32.0));
         eBottom.setFillColor(ENGINE);
     }
     ~Rocket() {}
