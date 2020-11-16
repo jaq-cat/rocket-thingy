@@ -5,6 +5,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <cstdlib>
+#include "rocket.hpp"
 
 using sf::Vector2u;
 using sf::Vector2i;
@@ -33,6 +34,7 @@ int main() {
     unordered_map<char, bool> ih = unordered_map<char, bool>();
 
     // initialization
+    Rocket r = Rocket();
 
     while (win.isOpen()) {
         // event handling
@@ -61,6 +63,7 @@ int main() {
         // collision
         // rendering
         win.clear(Color(147, 208, 249));
+        r.draw(win);
         win.display();
     }
     return EXIT_SUCCESS;
