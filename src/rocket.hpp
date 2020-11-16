@@ -16,9 +16,11 @@ private:
     sf::ConvexShape engineBottom;
 
 public:
-    Rocket()
-    : nose(sf::ConvexShape(3)),
-    fuselage(sf::RectangleShape(sf::Vector2f(SHIP_WIDTH, SHIP_HEIGHT))) {
+    Rocket() :
+    nose(sf::ConvexShape(3)),
+    fuselage(sf::RectangleShape(sf::Vector2f(SHIP_WIDTH, SHIP_HEIGHT))),
+    engineTop(sf::ConvexShape(3)),
+    engineBottom(sf::ConvexShape(3)) {
         // nose
         nose.setPoint(0, sf::Vector2f(SHIP_WIDTH/2.0, 0));
         nose.setPoint(1, sf::Vector2f(0.0, SHIP_WIDTH));
@@ -27,7 +29,7 @@ public:
         // fuselage
         fuselage.move(sf::Vector2f(0, SHIP_WIDTH));
         fuselage.setFillColor(sf::Color(0, 0, 0));
-        // engine to
+        // engine top
         // engine bottom
     }
     ~Rocket() {}
