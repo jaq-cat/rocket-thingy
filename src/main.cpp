@@ -59,7 +59,7 @@ int main() {
         // updating
         // collision
         // rendering
-        win.clear();
+        win.clear(Color(147, 208, 249));
         win.display();
     }
     return 0;
