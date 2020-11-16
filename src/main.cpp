@@ -1,5 +1,5 @@
-#define WIDTH 1200
-#define HEIGHT 1200
+#define WIDTH 1000
+#define HEIGHT 1000
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
