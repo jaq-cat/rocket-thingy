@@ -22,7 +22,7 @@ int main() {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 4;
     // create window
-    sf::RenderWindow win(sf::VideoMode(WIDTH, HEIGHT), "Window",
+    sf::RenderWindow win(sf::VideoMode(WIDTH, HEIGHT), "Cat Space Program",
             sf::Style::Titlebar, settings);
     win.setPosition(Vector2i(250, 50));
     //win.setVerticalSyncEnabled(true);
