@@ -16,12 +16,14 @@ public:
     ~Rocket() {}
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
         states.transform *= getTransform();
-        //sf::CircleShape shape(10);
-        sf::CircleShape nose(SHIP_WIDTH, 3);
+        sf::ConvexShape nose(3);
+        nose.setPoint(0, sf::Vector2f(SHIP_WIDTH/2.0, 0));
+        nose.setPoint(1, sf::Vector2f(0.0, SHIP_WIDTH));
+        nose.setPoint(2, sf::Vector2f(SHIP_WIDTH, SHIP_WIDTH));
         sf::RectangleShape fuselage(sf::Vector2f(SHIP_WIDTH, SHIP_HEIGHT));
-        fuselage.move(sf::Vector2f(0, (SHIP_WIDTH/2.0) * pow(3.0, 0.5)));
+        fuselage.move(sf::Vector2f(0, SHIP_WIDTH));
         nose.setFillColor(SPACE_ORANGE);
-        fuselage.setFillColor(SPACE_ORANGE);
+        fuselage.setFillColor(sf::Color(0, 0, 0));
         target.draw(nose);
         target.draw(fuselage);
     }
