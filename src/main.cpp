@@ -5,6 +5,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <cstdlib>
+
 #include "rocket.hpp"
 
 using sf::Vector2u;
@@ -63,7 +64,7 @@ int main() {
         // collision
         // rendering
         win.clear(Color(147, 208, 249));
-        r.draw(win);
+        r.draw(win, sf::RenderStates::Default);
         win.display();
     }
     return EXIT_SUCCESS;
