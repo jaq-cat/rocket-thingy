@@ -37,6 +37,7 @@ int main() {
     // initialization
     Rocket r = Rocket();
     r.move(WIDTH/2.0 - SHIP_WIDTH/2.0, HEIGHT - SHIP_HEIGHT - SHIP_WIDTH*2);
+    float acc = 0.001f;
 
     while (win.isOpen()) {
         // event handling
@@ -63,7 +64,8 @@ int main() {
         }
         // updating
         if (true) {
-            r.accelerate(10);
+            acc += 0.001f;
+            r.accelerate(acc);
         }
         r.tick();
         // collision
