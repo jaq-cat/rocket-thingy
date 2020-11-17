@@ -13,9 +13,9 @@ static const sf::Color ENGINE(sf::Color(0, 0, 0));
 
 class Rocket : public sf::Drawable, public sf::Transformable {
 private:
-    float xspd;
-    float yspd;
-    float r;
+    double xspd;
+    double yspd;
+    double r;
     sf::ConvexShape nose;
     sf::RectangleShape fuselage;
     sf::ConvexShape eTop;
@@ -50,8 +50,8 @@ public:
         eBottom.move(sf::Vector2f(0, SHIP_WIDTH+SHIP_HEIGHT));
         eBottom.setFillColor(ENGINE);
 
-        float ox = getOrigin().x;
-        float oy = getOrigin().y;
+        double ox = getOrigin().x;
+        double oy = getOrigin().y;
         nose.setOrigin(ox, oy);
         fuselage.setOrigin(ox, oy);
         eTop.setOrigin(ox, oy);
@@ -59,18 +59,22 @@ public:
     }
     ~Rocket() {}
 
-    void rotate_ship(float r) {
+    void rotate_ship(double r) {
+        rotate(r);
         this->r += r;
+        //std::cout << r << std::endl;
+        //std::cout << this->getRotation() << std::endl;
     }
 
-    void accelerate(float acc) {
-        std::cout << this->r << std::endl;
+    void accelerate(double acc) {
         xspd += rX(acc, this->r);
         yspd += rY(acc, this->r);
     }
 
     void tick() {
         move(sf::Vector2f(xspd, yspd));
+        yspd -= 0.1f;
+        std::cout << yspd << std::endl;
     }
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {

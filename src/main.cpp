@@ -39,7 +39,7 @@ int main() {
     // initialization
     Rocket r = Rocket();
     r.move(WIDTH/2.0 - SHIP_WIDTH/2.0, HEIGHT - SHIP_HEIGHT - SHIP_WIDTH*2);
-    float acc = 0.001f;
+    double acc = 0.001;
 
     while (win.isOpen()) {
         // event handling
@@ -66,9 +66,7 @@ int main() {
         }
         // updating
         acc += 0.001f;
-        r.rotate_ship(0.5f);
-        cout << r.getRotation() << endl;
-        r.rotate(0.1f);
+        r.rotate_ship(0.1f);
         r.accelerate(acc);
         r.tick();
         // collision
