@@ -27,6 +27,7 @@ public:
     fuselage(sf::RectangleShape(sf::Vector2f(SHIP_WIDTH, SHIP_HEIGHT))),
     eTop(sf::ConvexShape(3)),
     eBottom(sf::ConvexShape(3)) {
+        r = -90.0;
         // nose
         nose.setPoint(0, sf::Vector2f(SHIP_WIDTH/2.0, 0));
         nose.setPoint(1, sf::Vector2f(0.0, SHIP_WIDTH));
@@ -51,10 +52,14 @@ public:
     }
     ~Rocket() {}
 
+    void rotate(float r) {
+        this->r += r;
+    }
+
     void accelerate(float acc) {
-        r = -85.0;
-        xspd += rX(acc, r);
-        yspd += rY(acc, r);
+        std::cout << this->r << std::endl;
+        xspd += rX(acc, this->r);
+        yspd += rY(acc, this->r);
     }
 
     void tick() {
