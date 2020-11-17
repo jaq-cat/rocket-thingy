@@ -73,7 +73,7 @@ public:
 
     void tick() {
         move(sf::Vector2f(xspd, yspd));
-        yspd -= 0.1f;
+        yspd += 0.01f;
         std::cout << yspd << std::endl;
     }
 
