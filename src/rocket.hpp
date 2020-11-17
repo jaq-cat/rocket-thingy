@@ -48,10 +48,10 @@ public:
     ~Rocket() {}
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
         states.transform *= getTransform();
-        target.draw(nose);
-        target.draw(fuselage);
-        target.draw(eTop);
-        target.draw(eBottom);
+        target.draw(nose, states);
+        target.draw(fuselage, states);
+        target.draw(eTop, states);
+        target.draw(eBottom, states);
     }
 
 };

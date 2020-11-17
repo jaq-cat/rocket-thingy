@@ -36,6 +36,7 @@ int main() {
 
     // initialization
     Rocket r = Rocket();
+    r.move(100, 0);
 
     while (win.isOpen()) {
         // event handling
