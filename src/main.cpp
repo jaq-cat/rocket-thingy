@@ -38,7 +38,7 @@ int main() {
 
     // initialization
     Rocket r = Rocket();
-    r.move(WIDTH/2.0 - SHIP_WIDTH/2.0, HEIGHT - SHIP_HEIGHT - SHIP_WIDTH*2);
+    r.move(WIDTH/2.0, HEIGHT + SHIP_HEIGHT/6.0);
     double acc = 0.001;
 
     while (win.isOpen()) {
