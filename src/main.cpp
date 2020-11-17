@@ -65,8 +65,8 @@ int main() {
             }
         }
         // updating
-        acc += 0.001f;
-        r.rotate_ship(0.1f);
+        acc += 0.0005f;
+        r.rotate_ship(0.5f);
         r.accelerate(acc);
         r.tick();
         // collision

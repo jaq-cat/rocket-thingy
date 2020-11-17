@@ -50,6 +50,7 @@ public:
         eBottom.move(sf::Vector2f(0, SHIP_WIDTH+SHIP_HEIGHT));
         eBottom.setFillColor(ENGINE);
 
+        setOrigin(SHIP_WIDTH/2.0, SHIP_HEIGHT);
         double ox = getOrigin().x;
         double oy = getOrigin().y;
         nose.setOrigin(ox, oy);
@@ -74,7 +75,6 @@ public:
     void tick() {
         move(sf::Vector2f(xspd, yspd));
         yspd += 0.01f;
-        std::cout << yspd << std::endl;
     }
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
