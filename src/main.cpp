@@ -65,7 +65,7 @@ int main() {
         // updating
         if (true) {
             acc += 0.001f;
-            r.rotate(0.001f);
+            r.rotate(0.5f);
             r.accelerate(acc);
         }
         r.tick();
