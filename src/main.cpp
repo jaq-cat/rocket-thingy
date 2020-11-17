@@ -76,7 +76,8 @@ int main() {
         // rendering
         win.clear(Color(147, 208, 249));
         View v = win.getView();
-        v.setCenter(r.getPosition());
+        Vector2f n = Vector2f(r.getPosition().x, r.getPosition().y - SHIP_HEIGHT*3);
+        v.setCenter(n);
         win.setView(v);
         r.draw(win, sf::RenderStates::Default);
         win.display();
