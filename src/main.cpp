@@ -49,12 +49,12 @@ int main() {
                 case Event::TextEntered:
                     break;
                 case Event::KeyPressed:
-                    //if (ev.key.code == Keyboard::W)
-                        //ih['w'] = true;
+                    if (ev.key.code == Keyboard::W)
+                        ih['w'] = true;
                     break;
                 case Event::KeyReleased:
-                    //if (ev.key.code == Keyboard::W)
-                        //ih['w'] = false;
+                    if (ev.key.code == Keyboard::W)
+                        ih['w'] = false;
                     break;
                 default:
                     break;
@@ -62,6 +62,10 @@ int main() {
             }
         }
         // updating
+        if (true) {
+            r.accelerate(10);
+        }
+        r.tick();
         // collision
         // rendering
         win.clear(Color(147, 208, 249));

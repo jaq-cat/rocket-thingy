@@ -1,7 +1,8 @@
 #ifndef ROCKET_HPP
 #define ROCKET_HPP
 #include <SFML/Graphics.hpp>
-#include <cmath>
+#include <iostream>
+#include "math.hpp"
 
 #define SHIP_HEIGHT 100
 #define SHIP_WIDTH 40
@@ -12,6 +13,8 @@ static const sf::Color ENGINE(sf::Color(0, 0, 0));
 
 class Rocket : public sf::Drawable, public sf::Transformable {
 private:
+    float xspd;
+    float yspd;
     sf::ConvexShape nose;
     sf::RectangleShape fuselage;
     sf::ConvexShape eTop;
@@ -46,6 +49,17 @@ public:
         eBottom.setFillColor(ENGINE);
     }
     ~Rocket() {}
+
+    void accelerate(float acc) {
+        xspd += rX(acc, -90);
+        yspd += rY(acc, -90);
+    }
+
+    void tick() {
+        std::cout << xspd << ", " << yspd << std::endl;
+        move(sf::Vector2f(xspd, yspd));
+    }
+
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
         states.transform *= getTransform();
         target.draw(nose, states);
