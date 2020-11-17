@@ -72,9 +72,10 @@ public:
         yspd += rY(acc, this->r);
     }
 
-    void tick() {
+    void tick(bool grav) {
         move(sf::Vector2f(xspd, yspd));
-        yspd += 0.01f;
+        if (grav) yspd += 0.1f;
+        else if (yspd > 0.00) yspd = 0.0;
     }
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
