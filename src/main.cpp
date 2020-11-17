@@ -15,6 +15,7 @@ using sf::Color;
 using sf::Event;
 using sf::Keyboard;
 using sf::CircleShape;
+using sf::View;
 
 using std::string;
 using std::cout;
@@ -37,6 +38,8 @@ int main() {
     unordered_map<char, bool> ih = unordered_map<char, bool>();
 
     // initialization
+    View cam = View(sf::Vector2f(WIDTH/2.0, HEIGHT/2.0), sf::Vector2f(WIDTH, HEIGHT));
+    win.setView(cam);
     Rocket r = Rocket();
     r.move(WIDTH/2.0, HEIGHT + SHIP_HEIGHT/6.0);
     double acc = 0.001;
