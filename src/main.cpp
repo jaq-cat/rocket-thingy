@@ -75,6 +75,9 @@ int main() {
         // collision
         // rendering
         win.clear(Color(147, 208, 249));
+        View v = win.getView();
+        v.setCenter(r.getPosition());
+        win.setView(v);
         r.draw(win, sf::RenderStates::Default);
         win.display();
     }
