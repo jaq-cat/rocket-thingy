@@ -15,6 +15,7 @@ class Rocket : public sf::Drawable, public sf::Transformable {
 private:
     float xspd;
     float yspd;
+    float r;
     sf::ConvexShape nose;
     sf::RectangleShape fuselage;
     sf::ConvexShape eTop;
@@ -51,8 +52,9 @@ public:
     ~Rocket() {}
 
     void accelerate(float acc) {
-        xspd += rX(acc, -90);
-        yspd += rY(acc, -90);
+        r = -85.0;
+        xspd += rX(acc, r);
+        yspd += rY(acc, r);
     }
 
     void tick() {
