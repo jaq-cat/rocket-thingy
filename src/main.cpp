@@ -43,7 +43,7 @@ int main() {
     Rocket r = Rocket();
     r.move(WIDTH/2.0, HEIGHT + SHIP_HEIGHT/6.0);
     sf::RectangleShape ground = sf::RectangleShape(Vector2f(WIDTH*200, 500));
-    ground.setPosition(Vector2f(0.0, HEIGHT));
+    ground.setPosition(Vector2f(0.0, HEIGHT+50));
     ground.setFillColor(Color(0, 255, 0));
     double acc = 0.001;
 
@@ -76,6 +76,10 @@ int main() {
         r.accelerate(acc);
         r.tick();
         // collision
+        if (r.getPosition().y > ground.getPosition().y) {
+            cout << "aaaaaaaaaA" << endl;
+            cout << "aaaaaA" << endl;
+        }
         // rendering
         win.clear(Color(147, 208, 249));
         View v = win.getView();
