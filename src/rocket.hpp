@@ -49,10 +49,17 @@ public:
         eBottom.setFillColor(sf::Color(0, 0, 0));
         eBottom.move(sf::Vector2f(0, SHIP_WIDTH+SHIP_HEIGHT));
         eBottom.setFillColor(ENGINE);
+
+        float ox = getOrigin().x;
+        float oy = getOrigin().y;
+        nose.setOrigin(ox, oy);
+        fuselage.setOrigin(ox, oy);
+        eTop.setOrigin(ox, oy);
+        eBottom.setOrigin(ox, oy);
     }
     ~Rocket() {}
 
-    void rotate(float r) {
+    void rotate_ship(float r) {
         this->r += r;
     }
 
@@ -63,7 +70,6 @@ public:
     }
 
     void tick() {
-        std::cout << xspd << ", " << yspd << std::endl;
         move(sf::Vector2f(xspd, yspd));
     }
 

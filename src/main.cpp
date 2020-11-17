@@ -17,6 +17,8 @@ using sf::Keyboard;
 using sf::CircleShape;
 
 using std::string;
+using std::cout;
+using std::endl;
 using std::unordered_map;
 
 int main() {
@@ -63,11 +65,11 @@ int main() {
             }
         }
         // updating
-        if (true) {
-            acc += 0.001f;
-            r.rotate(0.5f);
-            r.accelerate(acc);
-        }
+        acc += 0.001f;
+        r.rotate_ship(0.5f);
+        cout << r.getRotation() << endl;
+        r.rotate(0.1f);
+        r.accelerate(acc);
         r.tick();
         // collision
         // rendering
