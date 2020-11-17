@@ -42,6 +42,9 @@ int main() {
     win.setView(cam);
     Rocket r = Rocket();
     r.move(WIDTH/2.0, HEIGHT + SHIP_HEIGHT/6.0);
+    sf::RectangleShape ground = sf::RectangleShape(Vector2f(WIDTH*200, 500));
+    ground.setPosition(Vector2f(0.0, HEIGHT));
+    ground.setFillColor(Color(0, 255, 0));
     double acc = 0.001;
 
     while (win.isOpen()) {
@@ -79,6 +82,7 @@ int main() {
         Vector2f n = Vector2f(r.getPosition().x, r.getPosition().y - SHIP_HEIGHT*3);
         v.setCenter(n);
         win.setView(v);
+        win.draw(ground);
         r.draw(win, sf::RenderStates::Default);
         win.display();
     }
